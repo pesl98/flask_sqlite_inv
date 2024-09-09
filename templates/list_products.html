@@ -1,0 +1,6 @@
+{% extends "list_template.html" %}
+{% set title = "Product List" %}
+{% set headers = ["ID", "Description", "SKU", "Price", "Warehouse Bins", "Reorder Point", "Reorder Quantity", "Inventory Level"] %}
+{% set item_keys = ["id", "description", "sku", "price", "warehouse_bins", "reorder_point", "reorder_quantity", "inventory_level"] %}
+{% set edit_url_prefix = "/products/edit/" %}
+{% set add_url = "/products/add" %}

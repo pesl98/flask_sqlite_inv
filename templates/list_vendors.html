@@ -1,0 +1,6 @@
+{% extends "list_template.html" %}
+{% set title = "Vendor List" %}
+{% set headers = ["ID", "Name", "Contact Person", "Email", "Phone", "Address"] %}
+{% set item_keys = ["id", "name", "contact_person", "email", "phone", "address"] %}
+{% set edit_url_prefix = "/vendors/edit/" %}
+{% set add_url = "/vendors/add" %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add New Order Request</h2>
+<form method="POST">
+    <label for="product_id">Product:</label>
+    <select id="product_id" name="product_id" required>
+        {% for product in products %}
+        <option value="{{ product.id }}">{{ product.description }}</option>
+        {% endfor %}
+    </select><br>
+
+    <label for="vendor_id">Vendor:</label>
+    <select id="vendor_id" name="vendor_id" required>
+        {% for vendor in vendors %}
+        <option value="{{ vendor.id }}">{{ vendor.name }}</option>
+        {% endfor %}
+    </select><br>
+
+    <label for="reorder_quantity">Reorder Quantity:</label>
+    <input type="number" id="reorder_quantity" name="reorder_quantity" required><br>
+
+    <button type="submit">Add Order Request</button>
+</form>
+{% endblock %}

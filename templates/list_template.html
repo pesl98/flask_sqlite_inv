@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ title }}</h2>
+<table class="table">
+    <thead>
+        <tr>
+            {% for header in headers %}
+            <th>{{ header }}</th>
+            {% endfor %}
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            {% for key in item_keys %}
+            <td>{{ item[key] }}</td>
+            {% endfor %}
+            <td>
+                <a href="{{ edit_url_prefix }}{{ item.id }}" class="btn btn-primary">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ add_url }}" class="btn btn-success">Add</a>
+{% endblock %}

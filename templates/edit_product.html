@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Product</h2>
+<form method="POST">
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" value="{{ product.description }}" required><br>
+
+    <label for="sku">SKU:</label>
+    <input type="text" id="sku" name="sku" value="{{ product.sku }}" required><br>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" step="0.01" value="{{ product.price }}" required><br>
+
+    <label for="warehouse_bins">Warehouse Bins:</label>
+    <input type="text" id="warehouse_bins" name="warehouse_bins" value="{{ product.warehouse_bins }}" required><br>
+
+    <label for="reorder_point">Reorder Point:</label>
+    <input type="number" id="reorder_point" name="reorder_point" value="{{ product.reorder_point }}" required><br>
+
+    <label for="reorder_quantity">Reorder Quantity:</label>
+    <input type="number" id="reorder_quantity" name="reorder_quantity" value="{{ product.reorder_quantity }}" required><br>
+
+    <label for="images">Images:</label>
+    <input type="text" id="images" name="images" value="{{ product.images }}"><br>
+
+    <label for="specification">Specification:</label>
+    <input type="text" id="specification" name="specification" value="{{ product.specification }}"><br>
+
+    <button type="submit">Update Product</button>
+</form>
+{% endblock %}

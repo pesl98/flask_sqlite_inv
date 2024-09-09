@@ -1,0 +1,6 @@
+{% extends "list_template.html" %}
+{% set title = "Order Requests List" %}
+{% set headers = ["ID", "Product ID", "Vendor ID", "Reorder Quantity", "Status"] %}
+{% set item_keys = ["id", "product_id", "vendor_id", "reorder_quantity", "status"] %}
+{% set edit_url_prefix = "/order_requests/edit/" %}
+{% set add_url = "/order_requests/add" %}

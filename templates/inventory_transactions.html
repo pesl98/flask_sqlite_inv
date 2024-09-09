@@ -1,0 +1,6 @@
+{% extends "list_template.html" %}
+{% set title = "Inventory Transactions List" %}
+{% set headers = ["ID", "Product ID", "Transaction Type", "Quantity", "Timestamp"] %}
+{% set item_keys = ["id", "product_id", "transaction_type", "quantity", "timestamp"] %}
+{% set edit_url_prefix = "/inventory_transactions/edit/" %}
+{% set add_url = "/inventory_transactions/add" %}

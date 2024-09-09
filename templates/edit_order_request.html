@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Order Request</h2>
+<form method="POST">
+    <label for="product_id">Product:</label>
+    <select id="product_id" name="product_id" required>
+        {% for product in products %}
+        <option value="{{ product.id }}" {% if product.id == order_request.product_id %}selected{% endif %}>{{ product.description }}</option>
+        {% endfor %}
+    </select><br>
+
+    <label for="vendor_id">Vendor:</label>
+    <select id="vendor_id" name="vendor_id" required>
+        {% for vendor in vendors %}
+        <option value="{{ vendor.id }}" {% if vendor.id == order_request.vendor_id %}selected{% endif %}>{{ vendor.name }}</option>
+        {% endfor %}
+    </select><br>
+
+    <label for="reorder_quantity">Reorder Quantity:</label>
+    <input type="number" id="reorder_quantity" name="reorder_quantity" value="{{ order_request.reorder_quantity }}" required><br>
+
+    <label for="status">Status:</label>
+    <select id="status" name="status" required>
+        <option value="New" {% if order_request.status == 'New' %}selected{% endif %}>New</option>
+        <option value="Ordered" {% if order_request.status == 'Ordered' %}selected{% endif %}>Ordered</option>
+        <option value="Closed/Received" {% if order_request.status == 'Closed/Received' %}selected{% endif %}>Closed/Received</option>
+    </select><br>
+
+    <button type="submit">Update Order Request</button>
+</form>
+{% endblock %}

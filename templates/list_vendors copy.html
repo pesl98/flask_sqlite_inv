@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>List of Vendors</h2>
+<a href="{{ url_for('add_vendor') }}">Add New Vendor</a>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Contact Person</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for vendor in vendors %}
+        <tr>
+            <td>{{ vendor.name }}</td>
+            <td>{{ vendor.contact_person }}</td>
+            <td>{{ vendor.email }}</td>
+            <td>{{ vendor.phone }}</td>
+            <td>{{ vendor.address }}</td>
+            <td>
+                <a href="{{ url_for('edit_vendor', id=vendor.id) }}">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

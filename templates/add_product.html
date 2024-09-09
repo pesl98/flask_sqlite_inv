@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add Product</h2>
+<form method="POST">
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" name="description" required>
+    </div>
+    <div class="form-group">
+        <label for="sku">SKU</label>
+        <input type="text" class="form-control" id="sku" name="sku" required>
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" id="price" name="price" step="0.01" required>
+    </div>
+    <div class="form-group">
+        <label for="warehouse_bins">Warehouse Bins</label>
+        <input type="text" class="form-control" id="warehouse_bins" name="warehouse_bins" required>
+    </div>
+    <div class="form-group">
+        <label for="reorder_point">Reorder Point</label>
+        <input type="number" class="form-control" id="reorder_point" name="reorder_point" required>
+    </div>
+    <div class="form-group">
+        <label for="reorder_quantity">Reorder Quantity</label>
+        <input type="number" class="form-control" id="reorder_quantity" name="reorder_quantity" required>
+    </div>
+    <div class="form-group">
+        <label for="images">Images</label>
+        <input type="text" class="form-control" id="images" name="images">
+    </div>
+    <div class="form-group">
+        <label for="specification">Specification</label>
+        <input type="text" class="form-control" id="specification" name="specification">
+    </div>
+    <div class="form-group">
+        <label for="vendor_id">Vendor</label>
+        <select class="form-control" id="vendor_id" name="vendor_id" required>
+            {% for vendor in vendors %}
+            <option value="{{ vendor.id }}">{{ vendor.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+</form>
+{% endblock %}
